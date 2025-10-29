@@ -9,10 +9,8 @@
         h1 {
             text-align: center;
             font-size: 48px;
-            /* Desktop default */
         }
 
-        /* Responsive font size for mobile devices */
         @media (max-width: 600px) {
             h1 {
                 font-size: 28px;
@@ -40,10 +38,19 @@
         <li>Start learning JavaScript basics</li>
     </ul>
 
+    <form>
+        <button type="submit" onclick="changeBackgroundColor(event)">Submit</button>
+    </form>
+
     <script>
         window.onload = function () {
             alert("Welcome");
         };
+
+        function changeBackgroundColor(event) {
+            event.preventDefault(); // Prevents form submission and page reload
+            document.body.style.backgroundColor = "#f0e68c"; // Change to any color you like
+        }
     </script>
 </body>
 
