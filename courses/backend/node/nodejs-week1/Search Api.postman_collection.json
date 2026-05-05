@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "d2fa5768-4e8d-4791-8328-ace8d1dd65a1",
+		"name": "Search Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33632914",
+		"_collection_link": "https://bold-comet-110682.postman.co/workspace/week1-node.js~414855ff-456e-41ba-a7c4-2745cbe345dd/collection/33632914-d2fa5768-4e8d-4791-8328-ace8d1dd65a1?action=share&source=collection_link&creator=33632914"
+	},
+	"item": [
+		{
+			"name": "GET all snippets (search)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search snippets by query",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/search?q=react",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "react"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get snippet by ID (search router)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/snippets/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"snippets",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search snippets with fields",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"fields\": {\n    \"user_id\": 1\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search error - q + fields together",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"fields\": {\n    \"user_id\": 1\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/search?q=react",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "react"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
