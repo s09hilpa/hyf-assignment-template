@@ -1,0 +1,129 @@
+openapi: 3.0.0
+
+info:
+  title: Snippets API
+  version: 1.0.0
+  description: Simple API for managing code snippets with users
+
+servers:
+  - url: http://localhost:3006
+
+paths:
+
+  /api/snippets:
+    get:
+      summary: Get all snippets
+      responses:
+        "200":
+          description: List of all snippets
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+
+    post:
+      summary: Create a new snippet
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - title
+                - contents
+                - user_id
+              properties:
+                title:
+                  type: string
+                contents:
+                  type: string
+                user_id:
+                  type: integer
+      responses:
+        "201":
+          description: Snippet created
+        "400":
+          description: Validation error
+        "500":
+          description: Server error
+
+  /api/snippets/public:
+    get:
+      summary: Get public snippets
+      responses:
+        "200":
+          description: Public snippets only
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /api/snippets/user/{userId}:
+    get:
+      summary: Get snippets by user ID
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: User snippets
+        "400":
+          description: Invalid user ID
+        "404":
+          description: No snippets found
+        "500":
+          description: Server error
+
+  /api/snippets/safe:
+    get:
+      summary: Safe sorted snippets
+      parameters:
+        - in: query
+          name: sort
+          schema:
+            type: string
+            enum: [title, created_at]
+        - in: query
+          name: direction
+          schema:
+            type: string
+            enum: [asc, desc]
+      responses:
+        "200":
+          description: Sorted snippets
+        "400":
+          description: Invalid query
+        "500":
+          description: Server error
+
+  /api/snippets/unsafe:
+    get:
+      summary: Unsafe endpoint (SQL injection demo)
+      description: DO NOT USE IN PRODUCTION
+      parameters:
+        - in: query
+          name: sort
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Returns snippets
+        "500":
+          description: Server error
+
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
