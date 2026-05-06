@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "3f9c7f73-c457-45e0-a99c-a384c2665f41",
+		"name": "After Validation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "54556637",
+		"_collection_link": "https://shilpajumde5-2718075.postman.co/workspace/1a310200-9680-4ae7-8874-1e8e4d135367/collection/54556637-3f9c7f73-c457-45e0-a99c-a384c2665f41?action=share&source=collection_link&creator=54556637"
+	},
+	"item": [
+		{
+			"name": "post-valid post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Test\",\n  \"contents\": \"Hello\",\n  \"user_id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3006/api/snippets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"snippets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post-valid post -with Base-url",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"New Test\",\n  \"contents\": \"Hello\",\n  \"user_id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/snippets",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"snippets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post-valid post -with Base-url",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"New Test\",\n  \"contents\": \"Hello\",\n  \"user_id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/snippets",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"snippets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post-invalid",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"\",\n  \"contents\": \"Hello\",\n  \"user_id\": \n}"
+				},
+				"url": {
+					"raw": "http://localhost:3006/api/snippets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"snippets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post-invalid-Base-url",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"\",\n  \"contents\": \"Hello\",\n  \"user_id\": \n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/snippets",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"snippets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "public",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"\",\n  \"contents\": \"Hello\",\n  \"user_id\": \n}"
+				},
+				"url": {
+					"raw": "http://localhost:3006/api/snippets/public",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"snippets",
+						"public"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "public  with Base-url",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"\",\n  \"contents\": \"Hello\",\n  \"user_id\": \n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/snippets/public",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"snippets",
+						"public"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post-invalid",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"\",\n  \"contents\": \"\",\n  \"user_id\": \n}"
+				},
+				"url": {
+					"raw": "http://localhost:3006/api/snippets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"api",
+						"snippets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
