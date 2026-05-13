@@ -1,0 +1,486 @@
+{
+	"info": {
+		"_postman_id": "55048807-be1d-4c42-a85f-d110f919128a",
+		"name": "Week3 Snippets API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "54556637",
+		"_collection_link": "https://shilpajumde5-2718075.postman.co/workspace/shilpa's-Workspace~1a310200-9680-4ae7-8874-1e8e4d135367/collection/54556637-55048807-be1d-4c42-a85f-d110f919128a?action=share&source=collection_link&creator=54556637"
+	},
+	"item": [
+		{
+			"name": "Part A -JWT",
+			"item": [
+				{
+					"name": "Login JWT",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"aiko.tanaka@example.com\",\n  \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/snippets/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"snippets",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Snippet JWT",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"aiko.tanaka@example.com\",\n  \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/snippets",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"snippets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Snippet JWT",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"aiko.tanaka@example.com\",\n  \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/snippets/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"snippets",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PartB-Database Tokens",
+			"item": [
+				{
+					"name": "Login DB Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"aiko.tanaka@example.com\",\n  \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/snippets/login-token",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"snippets",
+								"login-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Snippet DB Token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "051e0e93d8e1895128ef662cea6b3fe9b1b31dd4dfcc7756dd7e1b76d87a4251",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"DB Token Snippet\",\n  \"contents\": \"Created using database token auth\",\n  \"user_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/snippets/protected-db",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"snippets",
+								"protected-db"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Snippet DB Token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "051e0e93d8e1895128ef662cea6b3fe9b1b31dd4dfcc7756dd7e1b76d87a4251",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"DB Token Snippet\",\n  \"contents\": \"Created using database token auth\",\n  \"user_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/snippets/protected-db/12",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"snippets",
+								"protected-db",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout DB Token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "051e0e93d8e1895128ef662cea6b3fe9b1b31dd4dfcc7756dd7e1b76d87a4251",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"DB Token Snippet\",\n  \"contents\": \"Created using database token auth\",\n  \"user_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/snippets/logout-token",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"snippets",
+								"logout-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "invalid-create snippet",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "051e0e93d8e1895128ef662cea6b3fe9b1b31dd4dfcc7756dd7e1b76d87a4251",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"DB Token Snippet\",\n  \"contents\": \"Created using database token auth\",\n  \"user_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/snippets/protected-db",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"snippets",
+								"protected-db"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PART C — JWT AUTHORIZATION",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"aiko.tanaka@example.com\",\n  \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/snippets/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"snippets",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE SNIPPET",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3ODY5NTY0MSwiZXhwIjoxNzc4Njk5MjQxfQ.7voQnptvCsec0v_tf_GPclMhWMj0USlPh5_gCt60sq0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"JWT Protected\",\n  \"contents\": \"Created using JWT\",\n  \"user_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3006/api/snippets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3006",
+							"path": [
+								"api",
+								"snippets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE SNIPPET",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "NVALID TOKEN",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsI6IkpXVCJ9.eyJ1c2VySWQiOjEsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3ODY5NTY0MSwiZXhwIjoxNzc4Njk5MjQxfQ.7voQnptvCsec0v_tf_GPclMhWMj0USlPh5_gCtq0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"JWT Protected\",\n  \"contents\": \"Created using JWT\",\n  \"user_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/snippets",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"snippets"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PART D — API KEY AUTH",
+			"item": [
+				{
+					"name": "Health API Key Test",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "myapikey123",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/snippets/health",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"snippets",
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Health API -wrongkey",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "myapikey",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/snippets/health",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"snippets",
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
